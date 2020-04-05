@@ -24,7 +24,7 @@ DB_PASSWORD={password}
 php artisan migrate
 ```
 
-## Genereate keys for token signing
+## Generate key for token signing
 ```
 php artisan key:generate
 ```
