@@ -1,0 +1,35 @@
+@baseUrl = http://localhost:8000/api
+
+POST {{baseUrl}}/auth/register
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "asjamsuri",
+    "email": "asjamsuri@mail.com",
+    "password": "Password~12"
+}
+
+###
+POST {{baseUrl}}/auth/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "asjamsuri@mail.com",
+    "password": "Password~12"
+}
+
+@accessToken = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU4NjA3MDIwNywiZXhwIjoxNTg2MDczODA3LCJuYmYiOjE1ODYwNzAyMDcsImp0aSI6IkdzTEJpU3RBYWxnRXZCeFIiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.MPkPIN1cmUbcETe4w83D6Axz_QQ3_L0ODTDGd4lhyxk
+
+###
+GET {{baseUrl}}/auth/me
+Authorization: Bearer {{accessToken}}
+Accept: application/json
+Content-Type: application/json
+
+###
+POST {{baseUrl}}/auth/logout
+Authorization: Bearer {{accessToken}}
+Accept: application/json
+Content-Type: application/json
